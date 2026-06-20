@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Msysintertech</title>
+  <meta name="description" content="Learn about Msysintertech — South Africa's trusted telecoms and IT solutions partner for over a decade.">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .team-card__avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--violet), var(--violet-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      position: relative;
+    }
+    .team-card__avatar .placeholder-note {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-body);
+      font-weight: 400;
+    }
+    .team-card__body { padding: 20px; }
+    .team-card__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--violet); }
+    .team-card__role { font-size: 0.85rem; color: var(--amber); font-weight: 600; margin: 4px 0 10px; }
+    .team-card p { font-size: 0.88rem; color: #666; line-height: 1.6; }
+    .value-item { display: flex; gap: 16px; align-items: flex-start; }
+    .value-icon { width: 48px; height: 48px; background: rgba(64,52,95,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--violet); flex-shrink: 0; }
+    .value-icon svg { width: 22px; height: 22px; }
+    .value-item h4 { color: var(--violet); margin-bottom: 6px; }
+    .value-item p { font-size: 0.9rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><div class="navbar__logo-img"><span>M</span></div>Msysintertech</a>
+    <div class="navbar__nav">
+      <a href="index.html">Home</a>
+      <div class="has-dropdown"><a href="services.html">Services</a>
+        <div class="dropdown"><a href="telecoms.html">Telecoms</a><a href="it-support.html">IT Support</a><a href="voip.html">VoIP</a><a href="wireless.html">Wireless</a><a href="cloud-pabx.html">Cloud PABX</a></div>
+      </div>
+      <a href="about.html" class="active">About</a>
+      <a href="quote.html">Get a Quote</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="navbar__cta">
+      <a href="tel:+27000000000" class="btn btn--outline" style="background:rgba(64,52,95,0.06);color:var(--violet);border-color:var(--gray-200);">Call Us</a>
+      <a href="quote.html" class="btn btn--primary">Request a Quote</a>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="telecoms.html">Telecoms</a>
+  <a href="it-support.html">IT Support</a><a href="voip.html">VoIP</a><a href="wireless.html">Wireless</a>
+  <a href="cloud-pabx.html">Cloud PABX</a><a href="about.html">About</a><a href="quote.html">Get a Quote</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <div class="eyebrow">About Msysintertech</div>
+    <h1>The Technology Partner Built for South African Business</h1>
+    <p>More than a decade of delivering enterprise telecoms and IT solutions to businesses that demand reliability, transparency, and genuine expertise.</p>
+  </div>
+</div>
+
+<div class="breadcrumb"><div class="breadcrumb__inner"><a href="index.html">Home</a><span>›</span><span>About Us</span></div></div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2 fade-up">
+      <div class="feature-visual">
+        <div class="feature-visual__placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Team Photo<br/><small>Replace with your team photo</small>
+        </div>
+      </div>
+      <div class="feature-content">
+        <div class="eyebrow">Our Story</div>
+        <h2>Built in South Africa, for South African Business</h2>
+        <p>Msysintertech was founded with one clear mission: to give growing South African businesses access to the same calibre of telecoms and IT infrastructure that large enterprises take for granted — at pricing that makes sense for the SME market.</p>
+        <p style="margin-top:16px;">We started small, solving connectivity and communication problems for businesses in our community. Word spread. Our team grew. But our values stayed exactly the same: honest advice, expert delivery, and support you can actually reach when something goes wrong.</p>
+        <p style="margin-top:16px;">Today, Msysintertech supports more than 500 businesses across South Africa — from single-owner startups to multi-site enterprises — and we treat every client with the same level of care and attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="grid-4 fade-up" style="text-align:center;">
+      <div>
+        <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--amber);" data-count="10" data-suffix="+">0+</div>
+        <div style="color:rgba(255,255,255,0.7);margin-top:8px;">Years in Business</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--amber);" data-count="500" data-suffix="+">0+</div>
+        <div style="color:rgba(255,255,255,0.7);margin-top:8px;">Clients Served</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--amber);" data-count="20" data-suffix="+">0+</div>
+        <div style="color:rgba(255,255,255,0.7);margin-top:8px;">Certified Engineers</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--amber);">4.9★</div>
+        <div style="color:rgba(255,255,255,0.7);margin-top:8px;">Average Client Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">What Drives Us</div>
+      <h2>Our Values</h2>
+      <p>Everything we do is guided by these four commitments to our clients.</p>
+    </div>
+    <div class="grid-2 fade-up" style="gap:32px;">
+      <div class="value-item">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div>
+          <h4>Honest Advice</h4>
+          <p>We recommend what your business actually needs — not the most expensive solution. If a simpler fix works, we'll tell you.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div>
+          <h4>Reliability First</h4>
+          <p>We build infrastructure that works — and backs it with SLA commitments and 24/7 monitoring so you're never left guessing.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div>
+          <h4>People Over Tickets</h4>
+          <p>When you call us, you speak to a real engineer — not a script reader. We remember your environment and your business.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div>
+          <h4>Transparent Pricing</h4>
+          <p>No lock-in surprises, no hidden fees. Our quotes are detailed, our invoices are clear, and our pricing is competitive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Our Team</div>
+      <h2>The Experts Behind Your Technology</h2>
+      <p>Certified engineers, experienced consultants, and a support team that genuinely cares about your business outcomes.</p>
+    </div>
+    <div class="grid-4 fade-up">
+      <div class="team-card">
+        <div class="team-card__avatar">
+          CEO
+          <span class="placeholder-note">Replace with photo</span>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Your Name Here</div>
+          <div class="team-card__role">Chief Executive Officer</div>
+          <p>Leading Msysintertech's vision and ensuring every client receives the best possible technology experience.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:linear-gradient(135deg, #ff8d17, #ffb05a);">
+          CTO
+          <span class="placeholder-note">Replace with photo</span>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Your Name Here</div>
+          <div class="team-card__role">Chief Technology Officer</div>
+          <p>Certified across Cisco, Microsoft, and cloud platforms — designing the architectures our clients rely on daily.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:linear-gradient(135deg, #2b2240, #40345f);">
+          HoS
+          <span class="placeholder-note">Replace with photo</span>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Your Name Here</div>
+          <div class="team-card__role">Head of Support</div>
+          <p>Overseeing our helpdesk and field engineering teams to deliver the 4-hour response SLA our clients count on.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:linear-gradient(135deg, #574a7a, #7c5cbf);">
+          BD
+          <span class="placeholder-note">Replace with photo</span>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Your Name Here</div>
+          <div class="team-card__role">Business Development</div>
+          <p>Helping new and existing clients identify the right solutions — always with an honest and consultative approach.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Credentials</div>
+      <h2>Certified & Accredited</h2>
+      <p>Our engineers hold industry-recognised certifications so you know you're getting expert-level service.</p>
+    </div>
+    <div class="grid-4 fade-up">
+      <div class="service-card" style="text-align:center;padding:28px 20px;">
+        <div class="service-card__icon" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <h4>Cisco Certified</h4>
+        <p style="font-size:0.85rem;">CCNA & CCNP certified networking engineers on staff</p>
+      </div>
+      <div class="service-card" style="text-align:center;padding:28px 20px;">
+        <div class="service-card__icon" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h4>Microsoft Partner</h4>
+        <p style="font-size:0.85rem;">Accredited Microsoft partner with Azure and M365 expertise</p>
+      </div>
+      <div class="service-card" style="text-align:center;padding:28px 20px;">
+        <div class="service-card__icon" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>ICASA Compliant</h4>
+        <p style="font-size:0.85rem;">Fully licensed and compliant with SA telecoms regulations</p>
+      </div>
+      <div class="service-card" style="text-align:center;padding:28px 20px;">
+        <div class="service-card__icon" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <h4>ISO Certified</h4>
+        <p style="font-size:0.85rem;">ISO 9001 quality management systems in place</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <div>
+        <h2>Ready to Work With Us?</h2>
+        <p>Join over 500 South African businesses that trust Msysintertech to keep their technology running.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="quote.html" class="btn btn--primary">Get a Free Quote</a>
+        <a href="contact.html" class="btn btn--outline">Contact Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="navbar__logo" style="color:var(--white);"><div class="navbar__logo-img"><span>M</span></div>Msysintertech</div><p>Enterprise telecoms and IT solutions for South African businesses.</p></div>
+      <div class="footer__col"><h5>Services</h5><ul><li><a href="telecoms.html">Telecoms</a></li><li><a href="it-support.html">IT Support</a></li><li><a href="voip.html">VoIP</a></li><li><a href="wireless.html">Wireless</a></li><li><a href="cloud-pabx.html">Cloud PABX</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="quote.html">Get a Quote</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h5>Contact</h5><ul><li><a href="tel:+27000000000">+27 00 000 0000</a></li><li><a href="mailto:info@msysintertech.co.za">info@msysintertech.co.za</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="currentYear"></span> Msysintertech. All rights reserved.</span>
+      <div class="footer__bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
