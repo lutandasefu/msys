@@ -157,4 +157,72 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('currentYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ── CUSTOM CURSOR (dot + ring follower) ─────────────────────
+  // Only runs on devices with a real mouse (skips touch/mobile).
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot cursor-hidden';
+    const ring = document.createElement('div');
+    ring.className = 'cursor-ring cursor-hidden';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = 0, mouseY = 0;       // raw mouse position
+    let ringX = 0, ringY = 0;         // eased ring position
+    let started = false;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+      if (!started) {
+        started = true;
+        ringX = mouseX;
+        ringY = mouseY;
+        dot.classList.remove('cursor-hidden');
+        ring.classList.remove('cursor-hidden');
+      }
+    });
+
+    // Smoothly ease the ring toward the dot's position every frame
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Hide cursor visuals when leaving the window
+    document.addEventListener('mouseleave', () => {
+      dot.classList.add('cursor-hidden');
+      ring.classList.add('cursor-hidden');
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.classList.remove('cursor-hidden');
+      ring.classList.remove('cursor-hidden');
+    });
+
+    // Expand + recolor the ring over interactive elements
+    const interactiveSelector = 'a, button, input, select, textarea, .service-card, .pricing-card, .popup-product, .testimonial-card, .team-card';
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest(interactiveSelector)) {
+        dot.classList.add('cursor-hover');
+        ring.classList.add('cursor-hover');
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest(interactiveSelector)) {
+        dot.classList.remove('cursor-hover');
+        ring.classList.remove('cursor-hover');
+      }
+    });
+
+    // Subtle "click" pulse
+    document.addEventListener('mousedown', () => ring.style.transform = 'translate(-50%, -50%) scale(0.85)');
+    document.addEventListener('mouseup', () => ring.style.transform = 'translate(-50%, -50%) scale(1)');
+  }
+
 });
