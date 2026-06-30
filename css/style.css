@@ -3,12 +3,13 @@
    Brand: #40345f (deep violet), #ff8d17 (amber), #fff, #000
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --violet: #40345f;
   --violet-dark: #2b2240;
   --violet-light: #574a7a;
+  --hero-dark: #1f2020;
   --amber: #ff8d17;
   --amber-light: #ffb05a;
   --white: #ffffff;
@@ -17,8 +18,8 @@
   --gray-200: #e8e8ec;
   --gray-500: #888899;
   --gray-800: #1e1e2e;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
   --radius: 12px;
   --radius-lg: 20px;
   --shadow: 0 4px 24px rgba(64,52,95,0.12);
@@ -43,8 +44,8 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 /* ── TYPOGRAPHY ── */
-h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.15; }
-h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; }
+h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
 h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
 h4 { font-size: 1.1rem; font-weight: 600; }
@@ -235,7 +236,7 @@ p { font-size: 1rem; color: #444; }
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--violet-dark) 0%, var(--violet) 60%, #5c4a85 100%);
+  background: var(--hero-dark);
   display: flex;
   align-items: center;
   position: relative;
@@ -250,22 +251,7 @@ p { font-size: 1rem; color: #444; }
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
-.hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
-}
-.hero__orb--1 {
-  width: 500px; height: 500px;
-  background: var(--amber);
-  top: -100px; right: -100px;
-}
-.hero__orb--2 {
-  width: 300px; height: 300px;
-  background: #7c5cbf;
-  bottom: -50px; left: 10%;
-}
+.hero__orb { display: none; }
 .hero__inner {
   position: relative;
   z-index: 2;
@@ -862,7 +848,7 @@ p { font-size: 1rem; color: #444; }
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  background: linear-gradient(135deg, var(--violet-dark) 0%, var(--violet) 100%);
+  background: var(--hero-dark);
   padding: 120px 24px 72px;
   text-align: center;
   position: relative;
@@ -944,13 +930,17 @@ p { font-size: 1rem; color: #444; }
 }
 .mobile-nav a:hover { background: var(--gray-100); }
 
-/* ── ANIMATIONS ── */
-.fade-up {
+/* ── ANIMATIONS ──
+   Safety net: content is visible by default. JS adds .fade-up-init
+   (via a script that only runs if main.js successfully loads) to enable
+   the animation. If main.js fails to load for any reason, all sections
+   remain fully visible instead of being stuck at opacity:0. */
+.fade-up-init .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s, transform 0.6s;
 }
-.fade-up.visible {
+.fade-up-init .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
