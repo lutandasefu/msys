@@ -321,10 +321,10 @@ p { font-size: 1rem; color: #444; }
   width: 100%;
   max-width: 480px;
   aspect-ratio: 4/3;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1013,17 +1013,32 @@ p { font-size: 1rem; color: #444; }
   .grid-4 { grid-template-columns: 1fr; }
   .hero__inner { gap: 40px; }
   .hero__visual { display: none; }
-  .hero__stats { gap: 20px; flex-wrap: wrap; }
+  .hero__content { text-align: center; }
+  .hero__badge { margin-left: auto; margin-right: auto; }
+  .hero__actions { justify-content: center; }
+  .hero__stats { gap: 20px; flex-wrap: wrap; justify-content: center; text-align: center; }
   .feature-block--reverse .feature-visual { order: 0; }
+  .feature-content { text-align: center; }
+  .feature-content .check-list { text-align: left; display: inline-flex; }
+  .feature-content .btn { margin-left: auto; margin-right: auto; }
+  .feature-visual__placeholder { align-items: center; text-align: center; }
   .cta-banner { flex-direction: column; text-align: center; }
   .cta-banner__actions { width: 100%; justify-content: center; }
-  .quote-form { padding: 28px 20px; }
+  .quote-form { padding: 28px 20px; text-align: center; }
+  .quote-form form { text-align: left; }
   .form-grid { grid-template-columns: 1fr; }
   .popup-products { grid-template-columns: 1fr; }
   .navbar__nav, .navbar__cta { display: none; }
   .hamburger { display: flex; }
-  .footer__grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; text-align: center; }
+  .footer__brand .navbar__logo { justify-content: center; }
+  .footer__social { justify-content: center; }
+  .footer__col ul { align-items: center; }
   .footer__bottom { flex-direction: column; text-align: center; }
   .voip-feature-grid { grid-template-columns: 1fr; }
+  .voip-feature-item { text-align: left; }
   .process-step { grid-template-columns: 60px 1fr; }
+  .service-card { text-align: center; }
+  .service-card__icon { margin-left: auto; margin-right: auto; }
+  .service-card__link { justify-content: center; }
 }
