@@ -181,7 +181,7 @@ p { font-size: 1rem; color: #444; }
 }
 .dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   background: var(--white);
   border-radius: var(--radius);
@@ -189,15 +189,21 @@ p { font-size: 1rem; color: #444; }
   border: 1px solid var(--gray-200);
   min-width: 200px;
   padding: 8px;
+  padding-top: 16px;
+  margin-top: -8px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-8px);
-  transition: var(--transition);
+  transform: translateY(-4px);
+  transition: opacity 0.2s, transform 0.2s;
 }
 .has-dropdown:hover .dropdown {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
+  transition-delay: 0s;
+}
+.has-dropdown .dropdown {
+  transition-delay: 0.15s;
 }
 .dropdown a {
   display: block;
@@ -222,6 +228,50 @@ p { font-size: 1rem; color: #444; }
   background: var(--violet);
   border-radius: 2px;
   transition: var(--transition);
+}
+
+/* ── HERO ICON CARDS ── */
+.hero__icon-cards {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero__icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.hero__icon-card-inner {
+  width: 120px;
+  height: 120px;
+  background: var(--hero-dark);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: var(--transition);
+}
+.hero__icon-card-inner:hover {
+  border-color: var(--amber);
+  box-shadow: 0 0 24px rgba(255,141,23,0.2);
+  transform: translateY(-4px);
+}
+.hero__icon-card-inner svg {
+  width: 52px;
+  height: 52px;
+  stroke: var(--white);
+}
+.hero__icon-card span {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ── HERO ── */
