@@ -504,12 +504,13 @@ p { font-size: 1rem; color: #444; }
 .feature-block--reverse .feature-visual { order: -1; }
 .feature-visual {
   aspect-ratio: 4/3;
-  background: var(--gray-100);
+  background: var(--white);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow);
   overflow: hidden;
   position: relative;
 }
@@ -522,6 +523,7 @@ p { font-size: 1rem; color: #444; }
   font-size: 0.85rem;
 }
 .feature-visual__placeholder svg { width: 48px; height: 48px; }
+.feature-visual img { width: 80%; height: auto; object-fit: contain; }
 .feature-content { }
 .feature-content h2 { color: var(--violet); margin-bottom: 16px; }
 .feature-content p { margin-bottom: 24px; }
