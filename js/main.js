@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── POPUP ──────────────────────────────────────────────────
   const popup = document.getElementById('voipPopup');
   if (popup) {
-    // Show after 1.5s
     const shown = sessionStorage.getItem('popupShown');
     if (!shown) {
       setTimeout(() => {
@@ -59,20 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     }
 
-    // Close on overlay click
     popup.addEventListener('click', (e) => {
       if (e.target === popup) popup.classList.remove('active');
     });
 
-    // Close button
     const closeBtn = popup.querySelector('.popup-close');
     if (closeBtn) closeBtn.addEventListener('click', () => popup.classList.remove('active'));
 
-    // Skip button
     const skipBtn = popup.querySelector('.popup-skip');
     if (skipBtn) skipBtn.addEventListener('click', () => popup.classList.remove('active'));
 
-    // Product selection
     const products = popup.querySelectorAll('.popup-product');
     products.forEach(p => {
       p.addEventListener('click', () => {
@@ -81,16 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // CTA button
     const popupCta = popup.querySelector('.popup-cta');
     if (popupCta) {
       popupCta.addEventListener('click', () => {
         popup.classList.remove('active');
         const selected = popup.querySelector('.popup-product.selected');
         const productName = selected ? selected.querySelector('h4').textContent : '';
-        const quoteForm = document.getElementById('quoteSection');
-        if (quoteForm) {
-          quoteForm.scrollIntoView({ behavior: 'smooth' });
+        const quoteSection = document.getElementById('quoteSection');
+        if (quoteSection) {
+          quoteSection.scrollIntoView({ behavior: 'smooth' });
           const serviceSelect = document.getElementById('serviceSelect');
           if (serviceSelect) serviceSelect.value = 'voip';
           const msgArea = document.getElementById('msgArea');
@@ -105,22 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── QUOTE FORM ─────────────────────────────────────────────
-  const quoteForm = document.getElementById('quoteForm');
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = quoteForm.querySelector('.form-submit');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        quoteForm.reset();
-        btn.textContent = 'Get My Quote';
-        btn.disabled = false;
-        const msg = document.getElementById('formSuccess');
-        if (msg) { msg.classList.add('show'); setTimeout(() => msg.classList.remove('show'), 5000); }
-      }, 1800);
-    });
-  }
+  // Submission handled by Web3Forms — no JS interception needed.
+  // contact.html uses access key: bee0a659-d77b-4604-9d43-cc8cabe2f52a
+  // quote.html uses access key:   11d5fcf2-f7fe-481a-ad9e-8306ddbba5a0
 
   // ── ACTIVE NAV ─────────────────────────────────────────────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -158,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ── CUSTOM CURSOR (dot + ring follower) ─────────────────────
-  // Only runs on devices with a real mouse (skips touch/mobile).
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const dot = document.createElement('div');
     dot.className = 'cursor-dot cursor-hidden';
@@ -167,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(dot);
     document.body.appendChild(ring);
 
-    let mouseX = 0, mouseY = 0;       // raw mouse position
-    let ringX = 0, ringY = 0;         // eased ring position
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
     let started = false;
 
     document.addEventListener('mousemove', (e) => {
@@ -185,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Smoothly ease the ring toward the dot's position every frame
     function animateRing() {
       ringX += (mouseX - ringX) * 0.18;
       ringY += (mouseY - ringY) * 0.18;
@@ -195,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animateRing();
 
-    // Hide cursor visuals when leaving the window
     document.addEventListener('mouseleave', () => {
       dot.classList.add('cursor-hidden');
       ring.classList.add('cursor-hidden');
@@ -205,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ring.classList.remove('cursor-hidden');
     });
 
-    // Expand + recolor the ring over interactive elements
     const interactiveSelector = 'a, button, input, select, textarea, .service-card, .pricing-card, .popup-product, .testimonial-card, .team-card';
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(interactiveSelector)) {
@@ -220,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Subtle "click" pulse
     document.addEventListener('mousedown', () => ring.style.transform = 'translate(-50%, -50%) scale(0.85)');
     document.addEventListener('mouseup', () => ring.style.transform = 'translate(-50%, -50%) scale(1)');
   }
